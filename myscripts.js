@@ -1,18 +1,30 @@
 function computerPlay(){
-let choices = ['Rock','Paper','Scissors'];      //provides the 3 possible moves in the game
-let randomChoice=Math.floor(Math.random()*3);   //gives a random number between 0,1, and 2.
-let cpuMove = choices[randomChoice];            //This choice correlates with the 3 possible moves to select our cpu's move.
-return cpuMove;
+return Math.floor(Math.random()*3);   //gives a random number between 0,1, and 2.
 }
 
-const playerSelection = "rock";
-const computerSelection =computerPlay();
+
+let playerSelection = "papEr";
+let computerSelection = computerPlay();
+playerSelection = playerSelection.toLowerCase();
 
 
 function playRound(playerSelection, computerSelection){
-    let Rock = 0;
-    let Paper = 1;
-    let Scissors = 2;
+  
+
+    if(playerSelection == "rock"){
+        playerSelection = 0;
+    }
+    else if(playerSelection == "paper"){
+        playerSelection = 1;
+    }
+    else if (playerSelection == "scissors"){
+        playerSelection = 2;
+    }
+    else {
+        return "error";
+    }
+   
+
     if (playerSelection == 0 && computerSelection == 1){
         return "You Lose! Paper beats Rock";
     }
@@ -35,6 +47,6 @@ function playRound(playerSelection, computerSelection){
         return "It's a tie! You chose the same thing!"
     }
     else {
-        return 
+        return "error";
     }
 }
