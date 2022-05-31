@@ -1,5 +1,7 @@
 function computerPlay(){
-return Math.floor(Math.random()*3);   //gives a random number between 0,1, and 2.
+
+    return Math.floor(Math.random()*3);   //gives a random number between 0,1, and 2.
+
 }
 
 
@@ -9,8 +11,8 @@ playerSelection = playerSelection.toLowerCase();
 
 
 function playRound(playerSelection, computerSelection){
-  
-
+    computerSelection = computerPlay();
+    console.log(computerSelection);
     if(playerSelection == "rock"){
         playerSelection = 0;
     }
@@ -49,4 +51,12 @@ function playRound(playerSelection, computerSelection){
     else {
         return "error";
     }
+}
+
+
+function game(){
+for(let i = 0; i < 5; i ++){
+playRound(playerSelection,computerSelection);
+
+}
 }
