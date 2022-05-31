@@ -8,11 +8,12 @@ function computerPlay(){
 let playerSelection = "papEr";
 let computerSelection = computerPlay();
 playerSelection = playerSelection.toLowerCase();
-
+let playerWins = 0;
+let computerWins = 0;
 
 function playRound(playerSelection, computerSelection){
     computerSelection = computerPlay();
-    console.log(computerSelection);
+   
     if(playerSelection == "rock"){
         playerSelection = 0;
     }
@@ -43,7 +44,7 @@ function playRound(playerSelection, computerSelection){
         return "You Lose! Rock beats Scissors";
     }
     else if(playerSelection == 2 && computerSelection == 1){
-        return "You Lose! Rock beats Scissors";
+        return "You Win! Scissors beats Paper";
     }
     else if(playerSelection == computerSelection){
         return "It's a tie! You chose the same thing!"
@@ -55,8 +56,19 @@ function playRound(playerSelection, computerSelection){
 
 
 function game(){
-for(let i = 0; i < 5; i ++){
-playRound(playerSelection,computerSelection);
-
+    for(let i = 0; i < 5; i ++){
+    playRound(playerSelection,computerSelection);
+    console.log(playRound);
+    if(playRound == "You Win! Rock beats Scissors"||"You Win! Paper beats Rock"||"You Win! Scissors beats Paper"){
+    playerWins++;
 }
+else if (playRound == "It's a tie! You chose the same thing!"){
+return;
+}
+
+else{
+    computerWins++;
+}
+}
+
 }
