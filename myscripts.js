@@ -5,15 +5,17 @@ function computerPlay(){
 }
 
 
-let playerSelection = "papEr";
-let computerSelection = computerPlay();
-playerSelection = playerSelection.toLowerCase();
+let playerSelection;
+let computerSelection;
 let playerWins = 0;
 let computerWins = 0;
 
 function playRound(playerSelection, computerSelection){
-    computerSelection = computerPlay();
-   
+   computerSelection = computerPlay();
+   playerSelection = prompt("Type Your Choice... Rock, Paper, or Scissors?");
+   playerSelection = playerSelection.toLowerCase();
+   console.log("playerSelection:" + playerSelection);
+   console.log("computerSelection:" + computerSelection);
     if(playerSelection == "rock"){
         playerSelection = 0;
     }
@@ -36,6 +38,7 @@ function playRound(playerSelection, computerSelection){
     }
     else if(playerSelection == 1 && computerSelection == 0){
         return "You Win! Paper beats Rock";
+
     }
     else if(playerSelection == 1 && computerSelection == 2){
         return "You Lose! Scissors beats Paper";
@@ -56,19 +59,44 @@ function playRound(playerSelection, computerSelection){
 
 
 function game(){
+    
     for(let i = 0; i < 5; i ++){
-    playRound(playerSelection,computerSelection);
-    console.log(playRound);
-    if(playRound == "You Win! Rock beats Scissors"||"You Win! Paper beats Rock"||"You Win! Scissors beats Paper"){
-    playerWins++;
-}
-else if (playRound == "It's a tie! You chose the same thing!"){
-return;
+        thisRound = playRound(playerSelection,computerSelection);
+        console.log(thisRound);
+        if(thisRound =="You Win! Rock beats Scissors"|| thisRound=="You Win! Paper beats Rock"|| thisRound =="You Win! Scissors beats Paper"){
+            playerWins++;
+            
+        }
+        else if(thisRound == "You Lose! Paper beats Rock"|| thisRound=="You Lose! Scissors beats Paper"|| thisRound == "You Lose! Rock beats Scissors"){
+
+            computerWins++;
+        
+        }
+        else;
+
+
+    
+    
+    }
+    if(playerWins > computerWins){
+        let finalPlayerWins = playerWins;
+        playerWins =0;
+        computerWins=0;
+        return finalPlayerWins;
+        
+    }
+    else if(playerWins < computerWins){
+        let finalComputerWins = computerWins;
+        playerWins =0;
+        computerWins=0;
+        return finalComputerWins;
+    }
+    else{
+        playerWins =0;
+        computerWins=0;
+        return "SUDDEN DEATH";
+
+    }
+    
 }
 
-else{
-    computerWins++;
-}
-}
-
-}
