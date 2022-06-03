@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <link href = "style.css" rel = "stylesheet">
-    <script src = "myscripts.js"></script>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,12 +18,12 @@
 
 <div class = "game-container">
     <div class = "scoreboard-container">
-        <div class = "your-scoreboard">Your Score:</div>
-        <div class = "cpu-scoreboard">Enemy Score:</div>
+        <div class = "your-scoreboard"></div>
+        <div class = "cpu-scoreboard"></div>
     </div>
     <div class = "choices-container">
-        <div class = "rock"><button type = "button">Rock</button></div>
-        <div class = "paper"><button type = "button">Paper</button></div>
+        <div class = "rock"><button id = "rock-button" type = "button">Rock</button></div>
+        <div class = "paper"><button id = "paper-button" type = "button">Paper</button></div>
         <div class = "scissors"><button id="scissors-button" type = "button">Scissors</button></div>
     </div>
     <div class = "choose-container">
@@ -32,6 +32,7 @@
     
 
 </div>
+<div id = "result"></div>
 
 <div class = "footer-container">
     <div class = "footer-credit">Created by Dylan</div>
@@ -44,6 +45,6 @@
 
 
 
-
+<script src = "myscripts.js"></script>
 </body>
 </html>
